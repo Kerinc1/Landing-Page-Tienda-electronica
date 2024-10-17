@@ -1,0 +1,89 @@
+#user-image{
+    background: none;
+    width: 50px;
+    height: auto;
+    position:flex;
+    background-color: rgb(255, 255, 255);
+    border-radius: 80%;
+    cursor:pointer;
+
+}
+#user{
+    background:none;
+    border:none;
+    width: auto;
+    height: auto;
+    display:flex;
+    margin-left:40px;
+    display: block;
+    
+    
+}
+
+#sectionUser {
+    width: 100%; /* Ajuste de ancho si deseas */
+    height: auto; /* Ajuste de altura */
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.439);
+    position: fixed;
+    justify-content: center; /* Añadido para centrar horizontalmente */
+    align-items: center; /* Ya incluido para centrar verticalmente */
+    z-index: 200;
+    top: 0;
+    left: 0;
+    right: 0; /* Necesario para centrar horizontalmente */
+    bottom: 0; /* Necesario para centrar verticalmente */
+    display: none;
+}
+
+
+.contenedor-user{
+    width:50%;
+    margin:auto;
+    margin-top:9% !important;
+    background-color: white;
+    padding:3%;
+    border-radius: 2%;
+    
+}
+
+.botton-cerrar{
+    background: none;
+    border:none;
+    cursor: default;
+    width: 60px;
+    height: auto;
+
+}
+.nav-cerrar{
+    width: auto;
+    align-items: center;
+    margin: auto;
+    
+    
+
+}
+.img-cerrar{
+    width: 100%;
+    margin: auto;
+    height: auto;
+    cursor:pointer;
+    
+
+}
+
+#closeSignUp{
+    background: none;
+    border: none;
+}
+#showName{
+    margin:auto auto auto 20px;
+}
+#userMenu{
+    display: none;
+}
+
+#showName{
+    color:rgb(255, 255, 255);
+}
+

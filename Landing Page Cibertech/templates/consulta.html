@@ -1,0 +1,409 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Font Awesome -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+  rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+  rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.min.css"
+  rel="stylesheet"
+/>
+<script src="/js/formContacto.js"></script>
+<title>CIBERTECH</title>
+<link rel="icon" href="/static/favicon.ico" type="image/x-icon" >
+<script src="/js/carritoDeCompras.js"></script> 
+<script src="/js/login.js" render></script>
+<link rel="stylesheet" href="/styles/style.css">
+<link rel="stylesheet" href="/styles/user.css">
+<script>(function(w, d) { w.CollectId = "670f1ef848b2ba247e87efe9"; var h = d.head || d.getElementsByTagName("head")[0]; var s = d.createElement("script"); s.setAttribute("type", "text/javascript"); s.async=true; s.setAttribute("src", "https://collectcdn.com/launcher.js"); h.appendChild(s); })(window, document);</script>
+
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary" style="width:100%; z-index: 5;">
+  <div class="container-fluid d-flex justify-content-between">
+    <a class="navbar-brand mt-2 mt-lg-0" href="#inicio">
+      <img src="/static/CIBERTECH.png" alt="CIBERTECH">
+    </a>
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      style="color: rgb(255, 255, 255);"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link-color" href="#acerca_de_nosotros">Acerca de Nosotros</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link-color" href="#productos">Catálogo</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link-color" href="#contacto">Contacto</a>
+        </li>
+        <li>
+          <button id="user">
+            <img src="https://cdn.icon-icons.com/icons2/2483/PNG/512/user_icon_149851.png" id="user-image">
+          </button>
+        </li>
+        <li class="nav-item" id="userMenu">
+          <h4 id="showName"></h4>
+          <button class="nav-link-color" id="closeSignUp">Cerrar Sesion</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<!-- Sección del formulario -->
+<section id="sectionUser" style="display: none;">
+  <div class="contenedor-user">
+    <ul class="nav nav-pills nav-justified mb-3" id="ex1" role="tablist">
+      <li class="nav-item" role="presentation">
+        <a class="nav-link active" id="tab-login" data-mdb-pill-init href="#pills-login" role="tab" aria-controls="pills-login" aria-selected="true">Inciar Sesión</a>
+      </li>
+      <li class="nav-item" role="presentation">
+        <a class="nav-link" id="tab-register" data-mdb-pill-init href="#pills-register" role="tab" aria-controls="pills-register" aria-selected="false">Registrarse</a>
+      </li>
+      <li class="nav-cerrar" role="button">
+        <button id="bottonCerrar" class="botton-cerrar">
+          <img src="https://static.vecteezy.com/system/resources/previews/009/344/493/original/x-transparent-free-png.png" class="img-cerrar">
+        </button>
+      </li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane fade show active" id="pills-login" role="tabpanel" aria-labelledby="tab-login">
+        <form id="loginForm">
+          <h3 class="form-label" for="loginEmail">Ingresar Correo Electrónico</h3>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="loginEmail" class="form-control" />
+          </div>
+          <h3 class="form-label" for="loginPassword">Ingresar Contraseña</h3>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="password" id="loginPassword" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mb-4" style="color:#000000">Iniciar Sesión</button>
+        </form>
+      </div>
+      <div class="tab-pane fade" id="pills-register" role="tabpanel" aria-labelledby="tab-register">
+        <form id="registerForm">
+          <h4 class="form-label" for="registerName">Nombre de Usuario</h4>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="text" id="registerName" class="form-control" />
+          </div>
+          <h4 class="form-label" for="registerEmail">Correo Electrónico</h4>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="email" id="registerEmail" class="form-control" />
+          </div>
+          <h4 class="form-label" for="registerPassword">Contraseña</h4>
+          <div data-mdb-input-init class="form-outline mb-4">
+            <input type="password" id="registerPassword" class="form-control" />
+          </div>
+          <button type="submit" class="btn btn-primary btn-block mb-3" style="color: #000000;">Registrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- bar -->
+<section class="bar">
+  <button  id="carrito" onclick="mostrarCarrito()">
+    <img src="/static/cart.png" id="carrito">
+  </button>
+  <div class="cart-container">
+    <h1>Carrito de Compras</h1>
+  
+    <div id="cart-items"></div> <!-- Este div solo contiene los productos -->
+  
+    <!-- El botón de compra permanece fuera del div que se actualiza -->
+    <div class="cart-total">
+        <p class="totalProducto">Total: $<span id="cart-total">0</span></p>
+        <button class="btn-purchase">Comprar</button>
+    </div>
+  </div>
+  </div>
+</section>
+
+
+
+<section class="anuncios">
+    <!-- Background image 
+<div
+class="bg-image"
+style="
+  background-image: url('https://img.freepik.com/vector-gratis/estilo-fluido-telon-fondo-multicolor-vibrante-presentacion-moderna_1017-53600.jpg?t=st=1726794669~exp=1726798269~hmac=1ccfaa6f392b84aaba34e9902a21c3b0b94a2cc2a2915d9da066d87a65f81061&w=826');
+  height: 8vh;
+  width: 100%;
+"
+>
+<div class="mask" style="background-color: rgba(178, 60, 253, 0.6);">
+  <div class="d-flex justify-content-center align-items-center h-100">
+    <h1 class="text-white mb-0">DESCUENTOS HASTA DEL 50%</h1>
+  </div>
+</div>
+</div>-->
+
+<section class="mask-acerca-de-nosotros " id="mask-acerca-de-nosotros" style="background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100vh;">
+  <!-- Background Image -->
+    <!-- Mask -->
+
+    <!-- Content -->
+    <div class="container d-flex align-items-center justify-content-center h-100" id="inicio">
+      
+      <div class="text-center text-white" style="position: static; z-index: 2;">
+        <h1 class="display-4" >CIBERTECH</h1>
+        <p class="lead">Equipado para ganar, diseñado para gamers</p>
+        <a class="btn btn-outline-light btn-lg" id="btnCibertech"href="#contacto" role="button">Contáctanos</a>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- Section Content -->
+  <section class="acerca_de_nosotros" id="acerca_de_nosotros">
+    <div class="mask-acerca-de-nosotros" style="background-color: rgba(0, 0, 0, 0.6); width: 100%; height: 100vh;">
+
+      <!-- Mask -->
+    
+  
+      <!-- Content -->
+      <div class="container d-flex align-items-center justify-content-center h-100">
+        <div class="text-center text-white" style="position: static; z-index: 2;">
+          <h2 class="display-4">¿QUIENES SOMOS?</h2>
+          <p class="texto-quienes-somos">En <strong>CIBERTECH</strong>, somos más que una tienda. Somos una comunidad dedicada a ofrecer a los gamers lo mejor en equipos, accesorios y tecnología para una experiencia de juego inigualable.</p>
+          <p class="texto-quienes-somos">Desde PCs de alto rendimiento hasta periféricos y sillas gamer, tenemos todo lo que necesitas para llevar tu experiencia al siguiente nivel. Nuestro compromiso es brindarte productos de la más alta calidad y un servicio personalizado que se ajuste a tus necesidades.</p>
+        </div>
+      </div>
+    </div>
+</section>
+
+</section>
+<!-- Background image -->
+
+
+<section name="productos" class="productos" id="productos">
+  <div
+  class="bg-image"
+  style="
+    background-image: url('https://img.freepik.com/vector-gratis/estilo-fluido-telon-fondo-multicolor-vibrante-presentacion-moderna_1017-53600.jpg?t=st=1726794669~exp=1726798269~hmac=1ccfaa6f392b84aaba34e9902a21c3b0b94a2cc2a2915d9da066d87a65f81061&w=826');
+    height: 8vh;
+    width: 100%;
+
+    border-radius: 5%;
+  "
+  >
+  <div class="mask" style="background-color: rgba(178, 60, 253, 0.6);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <h1 class="text-white mb-0">NUESTROS PRODUCTOS</h1>
+    </div>
+  </div>
+  </div>
+
+  <div class="producto">
+    <div class="card" id="pc-gamer">
+      <img src="https://www.gamerinfo.com.br/wp-content/uploads/2023/08/pc-gamer-vale-a-pena.jpg" class="card-img-top"  alt="PC Gamer" />
+      <div class="card-body">
+        <h5 class="card-title">PC Gamer Ultima Generacion</h5>
+        <p class="card-text">Conquista el mundo digital con nuestras PCs gamer de última generación, diseñadas para ofrecer un rendimiento asombroso y gráficos impresionantes, garantizando la mejor experiencia de juego.</p>
+        <h5 class="price">$2.000.000</h5>
+        <button target="_blank" class="btn btn-primary" style="color:#000000" onclick="agregarAlCarrito('PC Gamer', 2000000)">Agregar al carrito de compras</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="producto">
+    <div class="card" id="reparar-computadora">
+      <img src="https://img.freepik.com/free-photo/pc-technology-computer-repair-shop-engineer-performing-laptop-maintenance-hardware-developer-fixing-electronic-components_253401-1584.jpg?size=626&ext=jpg" class="card-img-top" alt="Renovar Computadora"/>
+      <div class="card-body" >
+        <h5 class="card-title">Reparar Computadora</h5>
+        <p class="card-text">Devuelve la vida a tu computadora con nuestro servicio de renovación, que incluye actualizaciones y reparaciones completas para optimizar tu equipo y mantenerte en el juego.</p>
+        <h5 class="price">$150.000</h5>
+        <buton  class="btn btn-primary" style="color:#000000" onclick="agregarAlCarrito('Reparar Computadora', 150000)">Agregar al carrito de compras</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="producto">
+    <div class="card" id="controles-gamer">
+      <img src="https://dlcdnwebimgs.asus.com/files/media/861F940F-9C0A-420B-897B-C515713E67DB/v1/img/video/tutorial.jpg" class="card-img-top" alt="Controles Gamer"/>
+      <div class="card-body">
+        <h5 class="card-title">Controles Gamer</h5>
+        <p class="card-text" >Mejora tu experiencia con nuestros controles gamer de 72 horas de batería, diseñados para un agarre cómodo y respuesta rápida, para que domines cada partida con precisión.</p>
+        <h5 class="price">$200.000</h5>
+        <button class="btn btn-primary" style="color:#000000" onclick="agregarAlCarrito('Contol Gamer', 200000)">Agregar al carrito de comprass</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="producto">
+    <div class="card" id="silla">
+      <img src="https://computadoresenbogota.com/market/wp-content/uploads/2024/07/SILLA-GAMER-RAZER-ISKUR-X-ERGONOMIC-2.jpg" class="card-img-top" alt="Silla Gamer"/>
+      <div class="card-body">
+        <h5 class="card-title" >Silla Gamer</h5>
+        <p class="card-text">Experimenta comodidad suprema con nuestras sillas gamer ergonómicas, ajustables y con materiales de alta calidad, perfectas para largas horas de juego con estilo.</p>
+        <h5 class="price">$500.000</h5>
+        <button  class="btn btn-primary" style="color:#000000" onclick="agregarAlCarrito('Silla Gamer', 500000)">Agregar al carrito de compras</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section name="contacto" class="contacto" id="contacto"> 
+  <div class="row" style="background-color: #1a1919e1; width: 99.6vw;">   
+    <!-- Background y Mask solo para el footer -->
+    <div class="col-md-8">
+        <!-- Información del footer -->
+        <footer class="text-white" style="position: relative; z-index: 2; padding: 2rem;">
+            <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom text-white">
+                <div class="me-5 d-none d-lg-block">
+                    <span>Conéctate con nosotros en redes sociales:</span>
+                </div>
+                <div>
+                    <a href="" class="me-4 text-white"><i class="fab fa-facebook-f"></i></a>
+                    <a href="" class="me-4 text-white"><i class="fab fa-twitter"></i></a>
+                    <a href="" class="me-4 text-white"><i class="fab fa-google"></i></a>
+                    <a href="" class="me-4 text-white"><i class="fab fa-instagram"></i></a>
+                    <a href="" class="me-4 text-white"><i class="fab fa-linkedin"></i></a>
+                    <a href="" class="me-4 text-white"><i class="fab fa-github"></i></a>
+                </div>
+            </section>
+            <section>
+                <div class="container text-center text-md-start mt-5">
+                    <div class="row mt-3">
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4"></i>CIBERTECH</h6>
+                            <p>Con años de experiencia, ofrecemos tecnología de vanguardia con un enfoque en calidad y atención personalizada.
+                            </p>
+                        </div>
+                        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">Productos</h6>
+                            <p><a href="#pc-gamer" class="text-white">Computadoras</a></p>
+                            <p><a href="#reparar-computadora" class="text-white">Arreglos</a></p>
+                            <p><a href="#controles-gamer" class="text-white">Controles</a></p>
+                            <p><a href="#silla" class="text-white">Sillas</a></p>
+                        </div>
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">Enlaces útiles</h6>
+                            <p><a href="#!" class="text-white">Precios</a></p>
+                            <p><a href="#!" class="text-white">Configuraciones</a></p>
+                            <p><a href="#!" class="text-white">Órdenes</a></p>
+                            <p><a href="#!" class="text-white">Ayuda</a></p>
+                        </div>
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <h6 class="text-uppercase fw-bold mb-4">Contacto</h6>
+                            <p><i class="fas fa-home me-3"></i> Nueva York, NY 10012, US</p>
+                            <p><i class="fas fa-envelope me-3"></i> info@example.com</p>
+                            <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                            <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </footer>
+    </div>
+<!-- Formulario (parte derecha) -->
+<div class="col-md-4 d-flex align-items-end" style="padding: 3%; z-index: 2;">
+  <form  method="post" style="background-color: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: 8px; width: 100vw; color: rgb(0, 0, 0);">
+      
+      <div class="container-fluid p-0">
+          <div class="title mb-4">
+              <h2 style="color: rgb(8, 8, 8);">¡CONSULTA AQUI!</h2>
+          </div>
+          <div class="w-100">
+              <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                      <h3>Nombres</h3>
+                      <div class="form-outline mb-4">
+                          <input type="text" id="Nombre" name="Nombre" class="form-control" required= />
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                      <h3>Apellidos</h3>
+                      <div class="form-outline mb-4">
+                          <input type="text" id="Apellido" name="Apellido" class="form-control" required />
+                      </div>
+                  </div>
+              </div>
+            <!--  
+              <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                      <h3 >Tipo de Documento</h3>
+                      <div class="form-outline mb-4">
+                          <select id="Tipo_De_Documento" name="Tipo_De_Documento" class="form-control" required>
+                              <option value="">Seleccionar</option>
+                              <option value="CC">CC - Cédula de Ciudadanía</option>
+                              <option value="CE">CE - Cédula de Extranjería</option>
+                              <option value="TI">TI - Tarjeta de Identidad</option>
+                              <option value="PP">PP - Pasaporte</option>
+                              <option value="PPT">PPT - Permiso Protección Temporal</option>
+                              <option value="PEP">PEP - Permiso Especial de Permanencia</option>
+                          </select>
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                      <h3>Número de Documento</h3>
+                      <div class="form-outline mb-4">
+                          <input type="text" id="Numero_De_Documento" name="Numero_De_Documento" class="form-control" required />
+                      </div>
+                  </div>
+              </div>
+            -->
+              <div class="row">
+                  <div class="col-md-6 col-sm-12">
+                      <h3>Celular</h3>
+                      <div class="form-outline mb-4">
+                          <input type="tel" id="Celular" name="Celular" class="form-control" required/>
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                      <h3>Correo</h3>
+                      <div class="form-outline mb-4">
+                          <input type="email" id="Correo" name="Correo" class="form-control" required />
+                      </div>
+                  </div>
+                  <div class="col-md-6 col-sm-12">
+                      <h3>Producto</h3>
+                      <div class="form-outline mb-4">
+                          <select id="Servicio" name="Servicio" class="form-control" required>
+                              <option value="">Seleccionar</option>
+                              <option value="pc-gamer">PC Gamer</option>
+                              <option value="reparar-computadora">Reparar Computadora</option>
+                              <option value="control-gamer">Controles Gamer</option>
+                              <option value="silla-gamer">Silla Gamer</option>
+                          </select>
+                      </div>
+                  </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-block mb-4" style="background-color: rgba(233, 218, 3, 0.842); color: #000000;">ENVIAR</button>
+              <div id="registroMensaje" class="text-center mt-3" style="display: none;"></div>
+          </div>
+      </div>
+  </form>
+</div>
+
+
+
+
+
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.3.2/mdb.umd.min.js"
+></script>
+</body>
+</html>

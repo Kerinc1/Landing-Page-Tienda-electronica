@@ -1,0 +1,330 @@
+.cart-container {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: none; 
+    max-height: 400px; /* Limita la altura del carrito */
+    overflow-y: auto;  /* Habilita el scroll vertical */
+    position: absolute;
+    bottom:100%;
+    right:100%;
+
+}
+
+.cart-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-info {
+    margin-bottom: 10px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.cart-total {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #fff; /* Fondo para evitar que se sobreponga al contenido */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-top: 1px solid #ddd;
+}
+.btn-purchase {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+
+.btn-purchase:hover {
+    background-color: #7b1fa2;
+    color: white;
+}
+
+
+.quantity-number {
+    margin: 0 10px;
+}
+
+.btn-quantity-1,.btn-quantity-2{
+    border-radius: 20%;
+}
+
+.btn-quantity-1:hover{
+    background-color: rgb(196, 18, 18);
+    color:white;
+}
+
+.btn-quantity-2:hover{
+    background-color: #37980e ;
+    color:white;
+}
+
+.btn-purchase:hover {
+    background-color: #7b1fa2;
+    color: white;
+}
+
+/*Estilo carrito de compras */
+#carrito{
+    width:47px;
+    height:47px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-right: 10px;
+
+  
+  }
+#carrito:focus {
+    outline: none;
+  }
+
+.nav-link-color {
+    color: #ffde59;
+    font-size: 1.6rem;
+    padding-left: 25px;
+    
+  }
+.nav-link-color:active {
+    color: rgba(233, 218, 3, 0.842);
+  }
+.nav-link-color:hover {
+    color: #f0a32e;
+  }
+.navbar-brand img {
+    width: auto;
+    height: auto;
+    max-width: 250px; /* Ajusta según el tamaño deseado */
+    max-height: 250px; /* Ajusta según el tamaño deseado */}
+
+/* estilo acerca de */
+.text-muted{
+    color: rgb(255, 255, 255) !important;}
+.fw-bold{
+    color:rgb(255, 255, 255) !important;
+  }
+.list-group-item{
+    color:rgb(255, 255, 255);
+  }
+
+.texto-quienes-somos,.clead {
+    font-size: 1.5rem;
+  }
+.display-4 {
+  font-size: 6rem;
+  }
+
+/* bar */
+
+.bar{
+    position: fixed;
+    top:91%;
+    right:15px;
+    padding: 10px;
+    background-color: rgb(166, 9, 245);
+    border-radius: 30%;
+    z-index: 100;
+    
+}
+
+
+
+/* Estilo general de la pagina y productos */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-image: url('https://wallpapercave.com/wp/wp4575307.jpg');
+    background-size: cover; /* Hace que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    background-attachment: fixed;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.productos {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr); /* Una columna para cada card */
+    gap: 1rem; /* Espacio entre las cards */
+    width: 100%;
+    padding: 1rem;
+
+}
+
+.producto {
+    width: 80%; /* Ancho del 80% */
+    margin: 10px auto; /* Margen superior e inferior, centrado */
+
+}
+
+.section-title {
+    text-align: left;
+    font-size: 5em;
+    color: white;
+    width: 80%; /* Igual ancho que las tarjetas */
+    margin-left: auto;
+    margin-right: auto; /* Centra el h2 */
+    color:#000000;
+}
+.card {
+    display: grid; /* Usar grid para alinear imagen y texto */
+    grid-template-columns: 1fr 1fr; /* Ambas columnas ocupan el 50% */
+    background-color: #413f41;
+    color: white;
+    padding: 1rem;
+    transition: transform 0.3s; 
+    background: linear-gradient(to right, #570152, #991092, #b139b1,#c961c9);
+    opacity: 0; /* Comienza oculto */
+    transform: translateY(20px); /* Desplazado hacia abajo */
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; /* Transiciones suaves */
+}
+
+.card.visible {
+    opacity: 1; /* Hace visible */
+    transform: translateY(0); /* Regresa a la posición original */
+}
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    width: 100%; /* Ajustar a 100% dentro del grid */
+    height: 100%; /* Altura al 100% para ocupar todo el espacio */
+    object-fit: cover; /* Mantener la relación de aspecto y cubrir el área */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column; /* Alinear texto y botón verticalmente */
+    justify-content: center; /* Centrar verticalmente */
+    text-align: left; /* Alinear texto a la izquierda */
+}
+
+.card-title {
+    font-size: 3.2rem;
+    margin-bottom: 0.8rem;
+    text-align: left;
+}
+
+.card-text {
+    font-size: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.btn-primary:focus{
+  background-color: rgba(233, 218, 3, 0.842);
+}
+
+.btn-primary {
+    background-color: rgba(233, 218, 3, 0.842);
+    border-color: #f1f1ee;
+    box-shadow: none !important;
+}
+
+.btn-primary:hover {
+    background-color: rgba(233, 218, 3, 0.747);
+    color: rgb(0, 0, 0); /* Cambia el color del texto si es necesario */
+
+    }
+.btn-primary:visited {
+    color: rgb(0, 0, 0); /* Cambia el color del texto cuando el enlace ha sido visitado */
+    background-color: rgba(233, 218, 3, 0.842); /* Mantén el fondo negro si lo deseas */
+}
+.btn-primary:active {
+    color: rgb(0, 0, 0); /* Cambia el color del texto cuando se clickea el enlace */
+    background-color: rgba(233, 218, 3, 0.842) !important; /* Mantén el fondo negro si lo deseas */
+}
+.navbar {
+    background-color: #1a1919e1 !important; /* Cambia el color de fondo para mayor contraste */
+    padding: 15px 20px; /* Aumenta el padding superior e inferior */
+}
+.nav-link:hover{
+  color: rgb(0, 0, 0);
+}
+.nav-link {
+    font-size: 1.2rem; /* Aumenta el tamaño de la fuente */
+    margin-right: 20px; /* Espacio entre los enlaces */
+    color: rgb(7, 7, 7);
+}
+
+.navbar-brand {
+    font-size: 1.5rem; /* Aumenta el tamaño del logo o nombre de la marca */
+}
+
+  /* Ajustes de la sección contacto */
+.contacto-row {
+    min-height: 100vh; /* Ocupar toda la altura de la ventana */
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Separar las columnas */
+}
+.form-control {
+      background-color: #333333; /* Color gris oscuro */
+      color: #000000; /* Texto blanco */
+      padding: 1.25rem 0.75rem;
+      border: 1px solid #9d9d9e !important;
+      border-radius: 0.25rem;
+      font-size: 1.125rem;
+      width: 100%; /* Aumenta el ancho de los inputs */
+  }
+
+.contacto p {
+      color: #ffffff !important; /* Texto blanco */
+  }
+  
+.col-md-6 h3 {
+      color: #000000 !important; /* Títulos en blanco */
+  }
+
+.price{
+    text-align: right !important;
+    
+}
+
+.producto{
+    display: flex;
+    justify-content: flex-start;
+}
+
+@keyframes sacudida {
+    0% { transform: translateX(0); }
+    10% { transform: translateX(-10px); }
+    20% { transform: translateX(10px); }
+    30% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    50% { transform: translateX(-6px); }
+    60% { transform: translateX(6px); }
+    70% { transform: translateX(-4px); }
+    80% { transform: translateX(4px); }
+    90% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+  }
+  
+.sacudir {
+    animation: sacudida 0.5s ease;
+  }
+  
+#btnCibertech:hover{
+    background-color: #000000;
+}
